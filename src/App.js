@@ -6,10 +6,10 @@ import React, { useState } from 'react'
 import Alert from "./components/Alert";
 import {
   BrowserRouter as Router,
-  Switch, // Switch is updated to Routes
+  //Switch, // Switch is updated to Routes
   Routes,
   Route,
-  Link
+  //Link
 } from "react-router-dom";
 
 
@@ -33,7 +33,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor= '#042743';
       showAlert("Dark mode has been enabled","success");
-      document.title = "TextUtils - Dark Mode";
+      // document.title = "TextUtils - Dark Mode";
 
       // FOR TITLE FLASHING  
       // setInterval(() => {
@@ -48,7 +48,7 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor='white';
       showAlert("Light mode has been enabled","success");
-      document.title = "TextUtils - Light Mode";
+      // document.title = "TextUtils - Light Mode";
     }
   }
   return (
@@ -64,12 +64,16 @@ function App() {
         /users ---> component 1
         /users/home ---> component 2
         without exact  it  will always use first  component1 */}
-          <Route exact path="/about" element={<About/>} />
-          <Route exact path="/" element={<TextForm heading="Enter the text to analyze below"
+          <Route exact path="/about" element={<About  mode={mode} /> } />
+          <Route exact path="/" element={<TextForm heading=" Try TextUtils - Word Counter, Character Counter, Remove extra spaces"
                 mode={mode} 
                 previewText="Enter something in the textbox above to preview it here"
                 showAlert={showAlert} />} />
         </Routes>
+        {/* <TextForm heading="Enter the text to analyze below"
+                mode={mode} 
+                previewText="Enter something in the textbox above to preview it here"
+                showAlert={showAlert} /> */}
         </div>
         </Router>
     </> 

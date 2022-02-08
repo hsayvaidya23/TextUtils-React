@@ -8,6 +8,9 @@ export default function Navbar(props) {
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <div className="container-fluid">
+                {/* <a className="navbar-brand" href="#">
+                    {props.title}
+                </a> */}
                 <Link className="navbar-brand" to="/">
                     {props.title}
                 </Link>
@@ -24,12 +27,15 @@ export default function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to ="/">
+                            <Link className="nav-link " aria-current="page" to ="/">
                                 Home
                             </Link>
+                            {/* <a className="nav-link active" aria-current="page" href="#">
+                                Home
+                            </a> */}
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">
+                            <Link className="nav-link " to="/about">
                                 {props.aboutText}
                             </Link>
                         </li>
